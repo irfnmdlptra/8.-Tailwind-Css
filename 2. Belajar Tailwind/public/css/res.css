@@ -1,0 +1,233 @@
+.foot{
+    margin-top: 20px;
+}
+.prmg{
+    display: block;
+    border-radius: 8px;
+}
+
+.portf{
+    text-align: center;
+}
+@media (max-width: 420px) {
+    .svge{
+      width: 36px;
+      height: 36px;
+    }
+    .svg-icon{
+      width: 35px;
+      height: 22px;
+  }
+  }
+
+@media (min-width: 360px) {
+
+       .sv{
+        margin-bottom: -40px;
+       } 
+    }
+    @media (max-width: 360px) {
+        .lal{
+            width: 36px;
+            height: 36px;
+        }
+        .sv{
+         margin-bottom: -30px;
+        } 
+        .svge{
+            width: 25px;
+            height: 25px;
+          }
+          .svg-icon{
+            width: 24px;
+            height: 12px;
+        }
+    .prmg{
+        display: none;
+    }
+   
+    .satu{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;  
+    }
+    .foot{
+        height: 120px;
+        margin-left: 5px;
+    }
+    #loading{
+        display: flex;
+        justify-content: flex-start;
+        
+    }
+    #loading img {
+        margin-top: 100px;
+       width: 70%;
+
+    }
+}
+
+@media (min-width: 200px) {
+    #loading{
+        display: flex;
+        justify-content: flex-start;
+        margin-top: -20px;
+    }
+    #loading img {
+        margin-top: 100px;
+    
+    }
+
+}
+@media (min-width: 360px) {
+    .satu{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;  
+    }
+    .prmg{
+        display: none;
+    }
+  
+    
+
+    .naru{
+        margin-bottom: 100px;
+    }
+    .tiga{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .foot{
+      
+        height: 120px;
+        margin-left: 5px;
+    }
+    .foot figcaption{
+        color: white;
+    }
+    .svg{
+        width: 36px;
+        height: 36px;
+    }
+}
+@media (min-width: 1280px) {
+    .foot{
+        display: none;
+    }
+
+    .portf{
+        width: 1180px;
+        margin-left: -300px;
+    }
+
+    #loading{
+        display: flex;
+        justify-content: center;
+
+    }
+}
+@media (min-width: 768px) {
+    .foot{
+        display: none;
+    }
+    .prvd, .prv2{
+        display: none;
+    }
+    .prmg{
+        display: block;
+    }
+ .portf{
+        width: 500px;
+
+    } 
+    #loading{
+        display: flex;
+        justify-content: center;
+    }
+    #loading img {
+        margin: 100px;
+
+    }
+
+
+}
+@media (min-width: 640px) {
+    .satu {
+        height: 200px;
+    }
+    .foot{
+        height: 100%;
+    }
+    .portf{
+        width: 800px;
+        margin-left: -120px;
+        text-align: center;
+    }
+    #loading{
+        display: flex;
+        justify-content: center;
+    }
+    
+}
+
+
+
+
+
+/* Loading Css  */
+.hilang{
+    display: none;
+  }
+  #load{
+  background: #15264f url(../img/gif/loadingrrefresh.gif) no-repeat center;
+  width: 100%;
+  height: 100vh;
+  z-index: 999999;
+  position: fixed;
+}
+  #error{
+  background: #15264f url(../img/gif/error.gif) no-repeat center;
+  width: 100%;
+  height: 100vh;
+  z-index: 999999;
+  position: fixed;
+}
+ 
+  #loading {
+    background: #15264f;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 80px;
+    z-index: 999;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    transition: all 0.5s;
+  }
+  #loading img {
+    width: 30%;
+    /* definisikan animasi dengan nama 'slide-right' yang akan berlangsung selama 4 detik,
+ dan akan diulang-ulang setiap 8 detik */
+    animation: slide-right 5s infinite ease-in-out;
+  }
+
+  /* definisikan keyframes untuk animasi 'slide-right' */
+  @keyframes slide-right {
+    /* pada awal animasi, posisi gambar akan tetap pada tempatnya */
+    0% {
+      transform: translateX(0);
+    }
+    /* pada 50% animasi, gambar akan digeser ke kanan sejauh 100px */
+    50% {
+      transform: translateX(300px) rotateZ(-30deg);
+    }
+    /* pada akhir animasi, gambar akan kembali ke posisi awalnya */
+    100% {
+      transform: translateX(800px) rotateZ(0deg);
+    }
+  }
+
