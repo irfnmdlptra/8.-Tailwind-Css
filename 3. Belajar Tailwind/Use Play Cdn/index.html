@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html >
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,6 +11,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
+        darkMode: 'class',
         theme: {
           extend: {
             colors: {
@@ -27,9 +28,13 @@
         },
       };
     </script>
-    <style type="text/tailwindcss"></style>
+    <style type="text/tailwindcss">
+      #toggle:checked ~ label div.toggle-circle {
+        @apply translate-x-3
+      }
+    </style>
   </head>
-  <body>
+  <body class="dark:bg-slate-800 dark:text-slate-100">
     <h1 class="text-6xl font-bold my-10">Mari Belajar <span class="bg-gradient-to-r from-green-400 to-yellow-500 text-transparent bg-clip-text">TailwindCss</span></h1>
 
     <section class="mb-10 bg-blue-600 font-poddak">
@@ -71,13 +76,52 @@
     </div>
 
     <div class="mt-32 max-w-xl mx-auto h-96 bg-slate-300 bg-contain overflow-hidden border-8 rounded-2xl shadow-slate-800 shadow-xl bg-no-repeat bg-center flex align-center" style="background-image: url(../image/api.jfif)">
-      <div class="w-[200px] h-[200px] bg-white/50  m-auto rounded-full backdrop-blur-md"></div>
+      <div class="w-[200px] h-[200px] bg-white/50 m-auto rounded-full backdrop-blur-md"></div>
     </div>
 
-    <hr class="my-20">
+    <hr class="my-20" />
 
-    <button class="my-10 bg-sky-500 px-5 py-2 rounded-full text-white font-semibold font-inter block mx-auto">Simpan</button>
 
+    <div class="flex justify-center">
+      <span class="text-sm text-slate-500 mr-2">Light</span>
+      <input type="checkbox" class="hidden" id="toggle">
+      <label for="toggle">
+        <div class="w-9 h-5 bg-slate-500 rounded-full flex items-center p-1 cursor-pointer">
+          <div class="w-4 h-4 rounded-full bg-slate-200 toggle-circle"></div>
+        </div>
+      </label>
+      <span class="text-sm text-slate-500 ml-2">Dark</span>
+    </div>
+
+    <button class="my-10 active:bg-red-600 hover:bg-blue-600 bg-blue-500 px-5 py-2 rounded-full text-white font-semibold font-inter block mx-auto focus:ring focus:ring-sky-300 dark:bg-slate-500 dark:hover:bg-slate-300 dark:text-slate-900 dark:hover:text-slate-700">Simpan</button>
+
+    <div class="max-w-lg my-10 border border-slate-200 rounded-xl mx-auto p-5 shadow-md group font-inter from-neutral-800 hover:bg-sky-600 dark:hover:bg-slate-300 ">
+      <h5 class="text-center font-bold text-lg mb-3 text-slate-700 group-hover:text-white dark:group-hover:text-slate-800">My Card</h5>
+      <p class="text-slate-600 group-hover:text-white selection:bg-lime-600 selection:text-slate-900 first-line:uppercase first-line:tracking-widest first-letter:text-7xl first-letter:float-left first-letter:mr-3 dark:group-hover:text-slate-800">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi fugit iste nam nemo delectus ipsa? Tempore porro velit reiciendis minima minus quod veniam tempora sit, molestiae doloremque distinctio voluptas iure?
+      </p>
+    </div>
+
+    <div class="max-w-lg my-10 border border-slate-200 rounded-xl mx-auto p-5 shadow-md font-thin">
+      <form action="">
+        <label for="email">
+          <span class="block font-semibold mb-1 text-slate-700 after:content-['*'] after:text-pink-600 after:ml-0.5 dark:text-slate-100">Email</span>
+        <input type="email" id="email" placeholder="masukkan email" class="py-2 px-3 border shadow rounded text-sm w-full block placeholder:text-slate-700 focus:outline-none focus:ring-1 focus:ring-sky-500 focus:border-sky-500 invalid:text-red-500 invalid:focus:ring-red-500 invalid:focus:border-red-500 peer" />
+        <p class="text-sm font-semibold peer-invalid:visible invisible text-red-500 m-1">
+          Email Tidak Valid
+        </p>
+      </label>
+      </form>
+    </div>
     <div class="mb-96"></div>
+
+    <script>
+      const checkbox = document.querySelector('#toggle');
+      const html = document.querySelector('html');
+
+      checkbox.addEventListener('click', function() {
+        checkbox.checked ? html.classList.add('dark') : html.classList.remove('dark')
+      })
+    </script>
   </body>
 </html>
